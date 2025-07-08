@@ -16,31 +16,31 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section id="proyek" class="py-20 bg-white">
+  <section id="proyek" class="py-20 bg-gradient-to-br from-white to-slate-100">
     <div class="container mx-auto px-6">
       <SectionTitle title="Proyek Unggulan" />
-      
-      <div class="grid md:grid-cols-2 gap-12">
+
+      <div class="grid md:grid-cols-2 gap-10 mt-10">
         <div
           v-for="project in projects"
           :key="project.title"
-          class="bg-gray-50 rounded-lg shadow-lg overflow-hidden"
+          class="bg-white rounded-xl shadow-md overflow-hidden border border-slate-200 transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
         >
           <img
             :src="project.image"
             alt="Gambar Proyek"
-            class="w-full h-56 object-cover"
+            class="w-full h-52 object-cover"
           />
-          
-          <div class="p-6">
-            <h3 class="text-2xl font-bold text-gray-800 mb-2">{{ project.title }}</h3>
-            <p class="text-gray-600 mb-4">{{ project.description }}</p>
 
-            <div class="mb-4">
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-slate-800 mb-2">{{ project.title }}</h3>
+            <p class="text-slate-600 text-sm mb-4">{{ project.description }}</p>
+
+            <div class="mb-4 flex flex-wrap">
               <span
                 v-for="t in project.tech"
                 :key="t"
-                class="inline-block bg-blue-100 text-blue-800 text-sm font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded-full"
+                class="bg-indigo-100 text-indigo-800 text-xs font-medium mr-2 mb-2 px-3 py-1 rounded-full"
               >
                 {{ t }}
               </span>
@@ -50,9 +50,12 @@ onMounted(async () => {
               :href="project.link"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-blue-600 font-semibold hover:underline"
+              class="inline-flex items-center text-indigo-600 font-semibold text-sm hover:underline"
             >
-              Lihat Detail &rarr;
+              Lihat Detail
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
             </a>
           </div>
         </div>

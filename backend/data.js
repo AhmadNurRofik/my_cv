@@ -10,6 +10,18 @@ const educationHistory = [
     period: '2019 - 2022',
     institution: 'SMK Tamansiswa Banjarnegara',
     major: 'Multimedia'
+  },
+  {
+    id: 3,
+    period: '2016 - 2019',
+    institution: 'SMP Negeri 3 Marabahan',
+    major: 'Umum'
+  },
+  {
+    id: 4,
+    period: '2010 - 2016',
+    institution: 'SD Negeri Balukung 1',
+    major: 'Umum'
   }
 ];
 
@@ -26,15 +38,15 @@ const skills = [
 
 const projects = [
   {
-    title: 'Website Toko Online',
-    image: 'https://via.placeholder.com/500x300?text=Proyek+1',
+    title: 'Website Tiket Online',
+    image: '/images/demontix.png', // Path ke public folder
     description: 'Platform e-commerce dengan fitur keranjang belanja.',
     tech: ['Vue.js', 'Express.js', 'PostgreSQL'],
     link: '#'
   },
   {
-    title: 'Aplikasi Manajemen Tugas',
-    image: 'https://via.placeholder.com/500x300?text=Proyek+2',
+    title: 'Aplikasi pemantauan Kualitas Udara',
+    image: '/images/oxyzone.png', // Path ke public folder
     description: 'Aplikasi untuk melacak progres tugas harian.',
     tech: ['React', 'Firebase'],
     link: '#'

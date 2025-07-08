@@ -2,6 +2,7 @@
 
 const express = require('express');
 const cors = require('cors');
+const path = require('path'); // ✅ Tambahkan ini
 const { educationHistory, skills, projects } = require('./data');
 
 const app = express();
@@ -11,6 +12,9 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 
+// ✅ Menyajikan gambar statis dari folder public/images
+app.use('/images', express.static(path.join(__dirname, 'public/images')));
+
 // API Routes
 app.get('/api/education', (req, res) => res.json(educationHistory));
 app.get('/api/skills', (req, res) => res.json(skills));
@@ -18,5 +22,5 @@ app.get('/api/projects', (req, res) => res.json(projects));
 
 // Start Server
 app.listen(PORT, () => {
-  console.log(`Server backend berjalan di http://localhost:${PORT}`);
+  console.log(`✅ Server backend berjalan di http://localhost:${PORT}`);
 });
