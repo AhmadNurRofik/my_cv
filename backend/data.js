@@ -39,15 +39,15 @@ const skills = [
 const projects = [
   {
     title: 'Website Tiket Online',
-    image: '/images/demontix.png', // Path ke public folder
+    image: '/images/demontix.png',
     description: 'Platform e-commerce dengan fitur keranjang belanja.',
     tech: ['Vue.js', 'Express.js', 'PostgreSQL'],
     link: '#'
   },
   {
     title: 'Aplikasi pemantauan Kualitas Udara',
-    image: '/images/oxyzone.png', // Path ke public folder
-    description: 'Aplikasi untuk melacak progres tugas harian.',
+    image: '/images/oxyzone.png',
+    description: 'Aplikasi untuk pemantauan kualitas udara.',
     tech: ['React', 'Firebase'],
     link: '#'
   }

@@ -3,7 +3,7 @@
     <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
       
       <!-- Logo atau Nama -->
-      <div class="text-2xl font-bold text-white tracking-wide">Nama Mahasiswa</div>
+      <div class="text-2xl font-bold text-white tracking-wide">Ahmad Nur Rofik</div>
       
       <!-- Navigasi -->
       <ul class="flex space-x-6">
