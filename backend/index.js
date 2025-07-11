@@ -1,26 +1,26 @@
 // backend/index.js
-
 const express = require('express');
-const cors = require('cors');
-const path = require('path'); // ✅ Tambahkan ini
+const cors    = require('cors');
+const path    = require('path');
 const { educationHistory, skills, projects } = require('./data');
 
 const app = express();
-const PORT = 3000;
 
-// Middleware
+// ==== Middleware ====
 app.use(cors());
 app.use(express.json());
-
-// ✅ Menyajikan gambar statis dari folder public/images
 app.use('/images', express.static(path.join(__dirname, 'public/images')));
 
-// API Routes
+// ==== Routes ====
 app.get('/api/education', (req, res) => res.json(educationHistory));
-app.get('/api/skills', (req, res) => res.json(skills));
-app.get('/api/projects', (req, res) => res.json(projects));
+app.get('/api/skills',     (req, res) => res.json(skills));
+app.get('/api/projects',   (req, res) => res.json(projects));
 
-// Start Server
-app.listen(PORT, () => {
-  console.log(`✅ Server backend berjalan di http://localhost:${PORT}`);
-});
+// ==== Jalankan lokal (npm run dev) ====
+if (process.env.NODE_ENV !== 'production' && !process.env.VERCEL) {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => console.log(`✅ Local API running on http://localhost:${PORT}`));
+}
+
+// ==== Ekspor untuk Vercel ====
+module.exports = app;
