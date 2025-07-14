@@ -18,7 +18,7 @@ onMounted(async () => {
 <template>
   <section id="proyek" class="py-20 min-h-screen font-sans overflow-x-hidden bg-gradient-to-br from-gray-900 to-black text-gray-100">
     <div class="container mx-auto px-6">
-      <SectionTitle title="Proyek Unggulan" />
+      <SectionTitle title="Proyek Unggulan" textColor="text-white" />
 
       <div class="grid md:grid-cols-2 gap-10 mt-10">
         <div

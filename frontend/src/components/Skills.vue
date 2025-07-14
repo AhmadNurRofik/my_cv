@@ -29,7 +29,7 @@ onMounted(async () => {
 <template>
   <section id="skill" class="py-20 min-h-screen bg-gradient-to-br from-gray-900 to-black text-gray-100 font-sans overflow-x-hidden">
     <div class="container mx-auto px-6">
-      <SectionTitle title="Keahlian & Teknologi" />
+      <SectionTitle title="Keahlian & Teknologi" textColor="text-white" />
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
         <div

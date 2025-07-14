@@ -1,7 +1,7 @@
 <template>
   <section
     id="pendidikan"
-    class="py-20 bg-gradient-to-br from-gray-900 to-black text-gray-100"
+    class="py-20 bg-gradient-to-br from-gray-900 via-gray-950 to-black text-gray-100 min-h-screen font-sans"
   >
     <div class="container mx-auto px-6">
       <SectionTitle title="PENDIDIKAN" textColor="text-white" />
@@ -9,7 +9,7 @@
       <div class="relative">
         <!-- Vertical timeline line -->
         <div
-          class="absolute hidden md:block top-0 bottom-0 left-1/2 border-l-2 border-gray-700"
+          class="absolute hidden md:block top-0 bottom-0 left-1/2 border-l-2 border-blue-900/50"
         ></div>
 
         <div
