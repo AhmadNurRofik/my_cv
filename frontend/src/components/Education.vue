@@ -1,7 +1,7 @@
 <template>
   <section
     id="pendidikan"
-    class="py-20 bg-gradient-to-r from-blue-100 via-blue-50 to-green-100 min-h-screen font-sans"
+    class="py-20 bg-gradient-to-br from-gray-50 to-white"
   >
     <div class="container mx-auto px-6">
       <SectionTitle title="PENDIDIKAN" />
