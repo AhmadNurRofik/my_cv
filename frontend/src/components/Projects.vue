@@ -15,7 +15,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section id="proyek" class="py-20 bg-gradient-to-br from-white to-slate-100">
+  <section id="proyek" class="edu py-20 min-h-screen font-sans overflow-x-hidden">
     <div class="container mx-auto px-6">
       <SectionTitle title="Proyek Unggulan" />
 
