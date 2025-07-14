@@ -1,10 +1,10 @@
 <template>
   <section
     id="pendidikan"
-    class="edu py-20 min-h-screen font-sans overflow-x-hidden"
+    class="py-20 bg-gradient-to-br from-gray-900 to-black text-gray-100"
   >
     <div class="container mx-auto px-6">
-      <SectionTitle title="PENDIDIKAN" />
+      <SectionTitle title="PENDIDIKAN" textColor="text-white" />
 
       <div class="relative">
         <!-- Vertical timeline line -->
