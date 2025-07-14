@@ -2,20 +2,21 @@
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
 import SectionTitle from './SectionTitle.vue'
+
 const projects = ref([])
+
 onMounted(async () => {
   try {
-    const response = await axios.get('/api/projects');
-    projects.value = response.data;
+    const response = await axios.get('/api/projects')
+    projects.value = response.data
   } catch (error) {
-    console.error(error);
+    console.error(error)
   }
-});
-
+})
 </script>
 
 <template>
-  <section id="proyek" class="edu py-20 min-h-screen font-sans overflow-x-hidden">
+  <section id="proyek" class="py-20 min-h-screen font-sans overflow-x-hidden bg-gradient-to-br from-gray-900 to-black text-gray-100">
     <div class="container mx-auto px-6">
       <SectionTitle title="Proyek Unggulan" />
 
@@ -23,7 +24,7 @@ onMounted(async () => {
         <div
           v-for="project in projects"
           :key="project.title"
-          class="bg-white rounded-xl shadow-md overflow-hidden border border-slate-200 transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+          class="bg-gray-800 border border-gray-700 rounded-xl shadow-md overflow-hidden transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
         >
           <img
             :src="project.image"
@@ -32,14 +33,14 @@ onMounted(async () => {
           />
 
           <div class="p-6">
-            <h3 class="text-xl font-bold text-slate-800 mb-2">{{ project.title }}</h3>
-            <p class="text-slate-600 text-sm mb-4">{{ project.description }}</p>
+            <h3 class="text-xl font-bold text-white mb-2">{{ project.title }}</h3>
+            <p class="text-gray-300 text-sm mb-4">{{ project.description }}</p>
 
             <div class="mb-4 flex flex-wrap">
               <span
                 v-for="t in project.tech"
                 :key="t"
-                class="bg-indigo-100 text-indigo-800 text-xs font-medium mr-2 mb-2 px-3 py-1 rounded-full"
+                class="bg-indigo-600/20 text-indigo-300 text-xs font-medium mr-2 mb-2 px-3 py-1 rounded-full"
               >
                 {{ t }}
               </span>
@@ -49,7 +50,7 @@ onMounted(async () => {
               :href="project.link"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center text-indigo-600 font-semibold text-sm hover:underline"
+              class="inline-flex items-center text-blue-400 hover:text-blue-300 font-semibold text-sm hover:underline"
             >
               Lihat Detail
               <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
