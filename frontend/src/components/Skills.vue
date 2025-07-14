@@ -1,18 +1,29 @@
 <script setup>
-import { ref, onMounted } from 'vue';
-import axios from 'axios';
-import SectionTitle from './SectionTitle.vue';
+import { ref, onMounted } from 'vue'
+import axios from 'axios'
+import SectionTitle from './SectionTitle.vue'
 
-const skills = ref([]);
+const skills = ref([])
+
+const getBgColor = (level) => {
+  switch (level.toLowerCase()) {
+    case 'mahir':
+      return 'bg-green-100'
+    case 'menengah':
+      return 'bg-yellow-100'
+    default:
+      return 'bg-white'
+  }
+}
 
 onMounted(async () => {
   try {
-    const response = await axios.get('http://localhost:3000/api/skills');
-    skills.value = response.data;
+    const response = await axios.get('/api/skills')
+    skills.value = response.data // ✅ PERBAIKAN DI SINI
   } catch (error) {
-    console.error(error);
+    console.error(error)
   }
-});
+})
 </script>
 
 <template>

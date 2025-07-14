@@ -1,66 +1,89 @@
-<script setup>
-import { ref, onMounted } from 'vue';
-import axios from 'axios';
-import SectionTitle from './SectionTitle.vue';
-
-const educationHistory = ref([]);
-
-onMounted(async () => {
-  try {
-    const response = await axios.get('http://localhost:3000/api/education');
-    educationHistory.value = response.data;
-  } catch (error) {
-    console.error(error);
-  }
-});
-</script>
-
 <template>
-  <section id="pendidikan" class="py-14 bg-gradient-to-br from-white to-slate-100">
+  <section
+    id="pendidikan"
+    class="py-20 bg-gradient-to-r from-blue-100 via-blue-50 to-green-100 min-h-screen font-sans"
+  >
     <div class="container mx-auto px-6">
-      <SectionTitle title="Riwayat Pendidikan" />
+      <SectionTitle title="PENDIDIKAN" />
 
-      <div class="relative mt-8">
-        <div class="absolute h-full border-r-2 border-slate-300 left-1/2 transform -translate-x-1/2"></div>
-
-        <div v-if="educationHistory.length === 0" class="text-center py-4 text-slate-500">
-          Tidak ada data pendidikan yang tersedia.
-        </div>
+      <div class="relative">
+        <!-- Vertical timeline line -->
+        <div
+          class="absolute hidden md:block top-0 bottom-0 left-1/2 border-l-2 border-gray-300"
+        ></div>
 
         <div
           v-for="(edu, index) in educationHistory"
           :key="edu.id"
-          class="mb-6 flex justify-between items-center w-full"
+          class="mb-8 md:mb-12 w-full relative"
         >
-          <!-- Kiri -->
-          <div v-if="index % 2 === 0" class="w-full flex">
-            <div class="w-1/2 pr-6 text-right">
-              <div class="bg-white shadow-md p-4 rounded-lg border border-slate-200">
-                <p class="text-indigo-600 font-semibold text-xs tracking-wide">{{ edu.period }}</p>
-                <h3 class="text-lg font-bold text-slate-800 mt-1">{{ edu.institution }}</h3>
-                <p class="text-slate-600 text-sm">{{ edu.major }}</p>
-              </div>
-            </div>
-            <div class="w-1/2 flex justify-start">
-              <div class="w-4 h-4 bg-indigo-500 rounded-full border-4 border-white shadow z-10"></div>
-            </div>
-          </div>
+          <div
+            :class="[
+              'flex flex-col md:flex-row w-full items-center',
+              index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+            ]"
+          >
+            <!-- Card box -->
+            <div class="w-full md:w-1/2 md:px-8 flex justify-center md:justify-end relative">
+              
+              <!-- DOT timeline (absolute center) -->
+              <div
+                class="hidden md:block absolute top-1/2 w-4 h-4 bg-blue-600 rounded-full z-10"
+                :class="index % 2 === 0
+                  ? '-right-8 translate-y-[-50%]'
+                  : '-left-8 translate-y-[-50%]'"
+              ></div>
 
-          <!-- Kanan -->
-          <div v-else class="w-full flex">
-            <div class="w-1/2 flex justify-end">
-              <div class="w-4 h-4 bg-indigo-500 rounded-full border-4 border-white shadow z-10"></div>
-            </div>
-            <div class="w-1/2 pl-6 text-left">
-              <div class="bg-white shadow-md p-4 rounded-lg border border-slate-200">
-                <p class="text-indigo-600 font-semibold text-xs tracking-wide">{{ edu.period }}</p>
-                <h3 class="text-lg font-bold text-slate-800 mt-1">{{ edu.institution }}</h3>
-                <p class="text-slate-600 text-sm">{{ edu.major }}</p>
+              <div
+                class="bg-white rounded-xl shadow-lg p-4 md:p-6 hover:shadow-2xl transition duration-300 flex flex-col md:flex-row items-center gap-2 md:gap-4 w-full md:max-w-md"
+              >
+                <img
+                  :src="edu.logo"
+                  class="w-16 h-16 object-contain"
+                  alt="Logo Institusi"
+                />
+                <div
+                  :class="index % 2 === 0
+                    ? 'text-center md:text-right'
+                    : 'text-center md:text-left'
+                  "
+                  class="w-full"
+                >
+                  <p class="text-xs md:text-sm font-semibold text-blue-600 mb-1">
+                    {{ edu.period }}
+                  </p>
+                  <h3 class="text-lg md:text-2xl font-bold text-gray-800 mb-1">
+                    {{ edu.institution }}
+                  </h3>
+                  <p class="text-gray-600 text-xs md:text-base">
+                    {{ edu.major }}
+                  </p>
+                </div>
               </div>
             </div>
+
+            <!-- Spacer div supaya flex di opposite side -->
+            <div class="hidden md:block w-1/2"></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<script setup>
+import axios from 'axios'
+import { ref, onMounted } from 'vue'
+import SectionTitle from './SectionTitle.vue'
+
+const educationHistory = ref([])
+
+onMounted(async () => {
+  try {
+    const response = await axios.get('/api/education')
+    educationHistory.value = response.data
+  } catch (error) {
+    console.error(error)
+  }
+})
+</script>
