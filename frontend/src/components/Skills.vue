@@ -6,13 +6,13 @@ import SectionTitle from './SectionTitle.vue'
 const skills = ref([])
 
 const getBgColor = (level) => {
-    switch (level.toLowerCase()) {
+  switch (level.toLowerCase()) {
     case 'mahir':
-      return 'bg-green-600/20 text-green-300'
+      return 'bg-green-100 text-green-800 border-green-200'
     case 'menengah':
-      return 'bg-yellow-600/20 text-yellow-300'
+      return 'bg-yellow-100 text-yellow-800 border-yellow-200'
     default:
-      return 'bg-gray-700 text-gray-300'
+      return 'bg-slate-100 text-slate-700 border-slate-200'
   }
 }
 
