@@ -1,15 +1,15 @@
 <template>
   <section
     id="pendidikan"
-    class="py-20 bg-gradient-to-br from-gray-900 via-gray-950 to-black text-gray-100 min-h-screen font-sans"
+    class="py-20 bg-gradient-to-br from-blue-100 via-white to-blue-50 text-slate-800 min-h-screen font-sans"
   >
     <div class="container mx-auto px-6">
-      <SectionTitle title="PENDIDIKAN" textColor="text-white" />
+      <SectionTitle title="PENDIDIKAN" textColor="text-slate-900" />
 
       <div class="relative">
         <!-- Vertical timeline line -->
         <div
-          class="absolute hidden md:block top-0 bottom-0 left-1/2 border-l-2 border-blue-900/50"
+          class="absolute hidden md:block top-0 bottom-0 left-1/2 border-l-2 border-blue-300"
         ></div>
 
         <div
@@ -34,11 +34,11 @@
               ></div>
 
               <div
-                class="bg-gray-800 border border-gray-700 rounded-xl shadow-xl p-4 md:p-6 hover:shadow-2xl transition duration-300 flex flex-col md:flex-row items-center gap-2 md:gap-4 w-full md:max-w-md"
+                class="bg-white border border-blue-100 rounded-xl shadow-lg p-4 md:p-6 hover:shadow-xl transition duration-300 flex flex-col md:flex-row items-center gap-2 md:gap-4 w-full md:max-w-md"
               >
                 <img
                   :src="edu.logo"
-                  class="w-16 h-16 object-contain rounded-lg bg-gray-700 p-2"
+                  class="w-16 h-16 object-contain rounded-md bg-blue-50 p-2"
                   alt="Logo Institusi"
                 />
                 <div
@@ -48,13 +48,13 @@
                   "
                   class="w-full"
                 >
-                  <p class="text-xs md:text-sm font-semibold text-blue-400 mb-1">
+                  <p class="text-xs md:text-sm font-semibold text-blue-600 mb-1">
                     {{ edu.period }}
                   </p>
-                  <h3 class="text-lg md:text-2xl font-bold text-white mb-1">
+                  <h3 class="text-lg md:text-2xl font-bold text-slate-800 mb-1">
                     {{ edu.institution }}
                   </h3>
-                  <p class="text-gray-300 text-xs md:text-base">
+                  <p class="text-slate-600 text-xs md:text-base">
                     {{ edu.major }}
                   </p>
                 </div>

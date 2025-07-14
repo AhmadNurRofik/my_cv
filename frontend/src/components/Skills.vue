@@ -8,11 +8,11 @@ const skills = ref([])
 const getBgColor = (level) => {
   switch (level.toLowerCase()) {
     case 'mahir':
-      return 'bg-green-600/20 text-green-300'
+      return 'bg-green-100 text-green-800 border-green-200'
     case 'menengah':
-      return 'bg-yellow-600/20 text-yellow-300'
+      return 'bg-yellow-100 text-yellow-800 border-yellow-200'
     default:
-      return 'bg-gray-700 text-gray-300'
+      return 'bg-slate-100 text-slate-700 border-slate-200'
   }
 }
 
@@ -27,18 +27,18 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section id="skill" class="py-20 min-h-screen bg-gradient-to-br from-gray-900 to-black text-gray-100 font-sans overflow-x-hidden">
+  <section id="skill" class="py-20 min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 text-slate-800 font-sans overflow-x-hidden">
     <div class="container mx-auto px-6">
-      <SectionTitle title="Keahlian & Teknologi" textColor="text-white" />
+      <SectionTitle title="Keahlian & Teknologi" textColor="text-slate-900" />
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
         <div
           v-for="skill in skills"
           :key="skill.name"
-          :class="['p-5 rounded-xl shadow-md border border-gray-700 text-center transition-all duration-300 hover:scale-105 hover:shadow-lg', getBgColor(skill.level)]"
+          :class="['p-5 rounded-xl shadow-md text-center transition-all duration-300 hover:scale-105 hover:shadow-lg border', getBgColor(skill.level)]"
         >
           <h3 class="text-lg font-semibold">{{ skill.name }}</h3>
-          <p class="text-sm mt-1">{{ skill.level }}</p>
+          <p class="text-sm mt-1 capitalize">{{ skill.level }}</p>
         </div>
       </div>
     </div>
