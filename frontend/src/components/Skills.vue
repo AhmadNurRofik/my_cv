@@ -6,13 +6,13 @@ import SectionTitle from './SectionTitle.vue'
 const skills = ref([])
 
 const getBgColor = (level) => {
-  switch (level.toLowerCase()) {
+    switch (level.toLowerCase()) {
     case 'mahir':
-      return 'bg-green-100 text-green-800 border-green-200'
+      return 'bg-green-600/20 text-green-300'
     case 'menengah':
-      return 'bg-yellow-100 text-yellow-800 border-yellow-200'
+      return 'bg-yellow-600/20 text-yellow-300'
     default:
-      return 'bg-slate-100 text-slate-700 border-slate-200'
+      return 'bg-gray-700 text-gray-300'
   }
 }
 
@@ -27,7 +27,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section id="skill" class="py-20 min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 text-slate-800 font-sans overflow-x-hidden">
+  <section id="skill" class="py-12 min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 text-slate-800 font-sans overflow-x-hidden">
     <div class="container mx-auto px-6">
       <SectionTitle title="Keahlian & Teknologi" textColor="text-slate-900" />
 
